@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            img {
+                width: 50%;
+            }
+
+            @media (max-width:900px) {
+                img {
+                    width: 100%;
+                }
+            }
+        </style>
+        <script src="dogs.js"></script>
+    </head>
+    <body>
+        <script>
+            for (var i = 0; i < dogs.length; i++) {
+                var div = document.createElement('div');
+                div.setAttribute('style','border:1px solid black');
+
+                var img = document.createElement('img');
+                img.setAttribute('src',dogs[i].picture);  
+
+                var dogname = document.createElement('h1');
+                dogname.textContent = dogs[i].name;
+                var age = document.createElement('p');
+                age.textContent = [i].age;
+                var breed = document.createElement('p');
+                breed.textContent = dogs[i].breed;
+                var food = document.createElement('p');
+                food.textContent = dogs[i].food;
+                var toys = document.createElement('p');
+                toys.textContent = dogs[i].toys;
+                
+                div.append(img,dogname,age,breed,food,toys);
+                document.body.append(div);
+                
+            }
+        </script>
+    </body>
+</html>

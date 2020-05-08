@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            .colored {
+                background-color: yellowgreen;
+                font-size: 40px;
+                border: 4px dashed black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="output">
+
+        </h1>
+        <p id="par1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis accusantium similique quas, dicta consequuntur quibusdam nostrum non, est corrupti voluptas sit illum, autem ipsum a quos incidunt rerum qui.
+        </p>
+        <p id="par2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis accusantium similique quas, dicta consequuntur quibusdam nostrum non, est corrupti voluptas sit illum, autem ipsum a quos incidunt rerum qui.
+        </p>
+        <p id="par3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis accusantium similique quas, dicta consequuntur quibusdam nostrum non, est corrupti voluptas sit illum, autem ipsum a quos incidunt rerum qui.
+        </p>
+        <p id="par4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis accusantium similique quas, dicta consequuntur quibusdam nostrum non, est corrupti voluptas sit illum, autem ipsum a quos incidunt rerum qui.
+        </p>
+        <p id="par5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis accusantium similique quas, dicta consequuntur quibusdam nostrum non, est corrupti voluptas sit illum, autem ipsum a quos incidunt rerum qui.
+        </p>
+        <script>
+            //your code here
+            document
+                .querySelectorAll('p')
+                .forEach(el=>{
+                    el.addEventListener('click',()=>{
+                        // var id = el.id;
+                        var id = el.getAttribute('id');
+                        document.querySelector('#output').textContent = id;
+
+                        document
+                            .querySelectorAll('p')
+                            .forEach(el2=>{
+                                // el2.setAttribute('style','background-color:transparent;')
+                                el2.classList.remove('colored')
+                            })
+
+                        // el.style.backgroundColor = 'yellowgreen';
+                        // el.setAttribute('style','background-color:yellowgreen;')
+                        el.classList.add('colored')
+
+                    })
+                })
+          
+        </script>
+    </body>
+</html>
